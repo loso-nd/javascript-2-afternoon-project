@@ -13,7 +13,7 @@ var arr = [10,20,30];
 // Do not edit the code above.
 
 /*
-  Create a function named 'first' that is given 'arr' as an argument.
+  Create a function declaration named 'first' that is given 'arr' as an argument.
   Return the first item in the given array.
 */
 
@@ -29,7 +29,7 @@ var arr = [40,50,60];
 // Do not edit the code above.
 
 /*
-  Create a function named 'last' that is given 'arr' as an argument. 
+  Create a function expression named 'last' that is given 'arr' as an argument. 
   Return the last item in the given array.
 */
 
@@ -45,7 +45,7 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 // Do not edit the code above.
 
 /*
-  Create a function named 'looper' that is given family as it's only argument. 
+  Create a function declarion named 'looper' that is given family as it's only argument. 
   Loop through the given array and alert every item in the array.
 */
 
@@ -80,7 +80,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 // Do not edit the code above.
 
 /*
-  Write a function named evenFinder that is given nums as it's only argument.
+  Write an arrow function named evenFinder that is given nums as it's only argument.
   Return an array that contains the even numbers from the nums array.
 */
 
@@ -109,7 +109,7 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 // Do not edit the code above.
 
 /*
-  Write a function called divider that is given one argument, numbersArray.
+  Write a function expression called divider that is given one argument, numbersArray.
   Have divider return an array with the first item in the array being the evens array (all the even values from numbersArray)
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
@@ -145,13 +145,49 @@ var getRandomArbitrary = function() {
   var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
   Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
   There is also a commented out array full of numbers to help you visualize what your function will be receiving.
-  Write a function named finder that will take in an array as an argument.
+  Write an arrow function named finder that will take in an array as an argument.
   In the function create a variable called randomNumber and set it to the invocation of getRandomArbitrary.
   Loop through the array to see if randomNumber is in the array. 
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+var newArray = [];
+const finder = (arr) => {
+var randomNumber = Math.floor(Math.random() * 30);
+  for ( var i = 0; i < numbers.length; i++){
+    if (randomNumber <= 30 ){
+        //newArray.push(numbers[i])
+        return true
+        }
+    else
+      return false
+    }
+  };
+
+/*
+var unqiue_arr =[];
+while(numbers.length < 30){
+  var randomNumber = Math.floor(Math.random() * 30);
+  var found = false
+  for ( var i = 0; i < 30; i++){
+    if (randomNumber == numbers[i] ){
+        return true;
+        }
+if(!found){
+return false
+    }
+}
+
+
+var unqiue_arr = []
+while(arr.length < 8){
+  var randomnumber=Math.floor(Math.random()*12)
+  var found=false;
+  for(var i=0;i<3;i++){
+    if(unqiue_arr[i]==randomnumber){found=true;break}
+  }
+  if(!found)unqiue_arr[unqiue_arr.length]=randomnumber;
+}*/
 
 
 
@@ -179,9 +215,20 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   removeItem(myGroceryList) --> [];
   addItem() --> [];
 */
+newlist = [];
+function removeItem(myGroceryList, chips){
+var items = "chips";
+if(myGroceryList){
+  myGroceryList.pop(items)
+  newList.push(myGroceryList[i])
+}
+  return newList
+  }
 
-//Code Here
-
+function addItem(myGroceryList,item){
+  myGroceryList.push('chips')
+  return myGroceryList
+  }
 
 
 ////////// PROBLEM 9 //////////
