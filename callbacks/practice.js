@@ -23,11 +23,13 @@
 ////////// PROBLEM 1 //////////
 
 /*
-  Write a function called first that takes in two parameters, an array and a callback function.
+  Write a function EXPRESSION called first that takes in two parameters, an array and a callback function.
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
 
-// Code Here 
+var first = function (array, callback) {
+  return callback(array[0]); //Invoke the callback function passing in the first element in the array as it's argument
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -39,15 +41,16 @@ first(names, function(firstName){
 // Do not edit the code above.
 
 
-
 ////////// PROBLEM 2 //////////
 
 /*
-  Write a function called last that takes in an array and a callback function. 
+  Write AN ARROW function called last that takes in an array and a callback function. 
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-//Code Here
+var last = (array, callback) => {
+  return callback(array.pop())
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -61,11 +64,12 @@ last(names, function(lastName){
 ////////// PROBLEM 3 //////////
 
 /*
-  Write a function called multiply that takes in three parameters: two numbers and a callback function.  
+  Write a function DECLARATION called multiply that takes in three parameters: two numbers and a callback function.  
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
-
-//Code Here
+function multiply(width, height, callback) {
+  return callback (width * height);
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -84,7 +88,15 @@ multiply(4, 3, function(answer){
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-//Code Here 
+var contains = (array, name, callback) => {
+  if(name === array[0]) {
+    return callback(true);
+  }
+  else {
+    return callback(false);
+  }
+}
+
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -105,7 +117,28 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
-//Code Here
+function uniq (array, callback){
+    //validats whether the first occurence of the current item is in the array
+var duplicate = array.filter(function(item, pos){
+    //sets it equal to the current positions of the item (only returning those items)
+return array.indexOf(item) == pos;
+});
+    //wrap the result and pass into a callback function 
+callback(duplicate);
+}
+// Example 1
+// function myFunction(myArray, callBack){
+
+//   var unique = myArray.filter(function(item, pos) {
+//     //validates whether the first occurrence of current item in array
+//     // equals the current position of the item (only return those items) 
+//     return myArray.indexOf(item) == pos;
+//   });
+ 
+//   //wrap your result and pass to callBack function 
+//   callBack(unique);
+ 
+//  }
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -121,8 +154,52 @@ uniq(names, function(uniqArr){
   Write a function called each that takes in an array of names and a callback function. 
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
+var each = (array, callback) => {
+   return callback((array[0]), array.indexOf(each));
+}
 
-//Code Here 
+
+ // var each = (names, callback) => {
+// //   return callback(names.forEach(element => console.log(names, names.indexOf(element))));
+
+// }
+  
+//   // (callback(array[0], array.indexOf(each)));
+// }
+// // callback(array.forEach(each(array[0])));
+
+// callback(array.forEach(indexOf(array)));
+
+
+/**
+ * /* EXAMPLES forEach() and indexof()
+const array1 = ['a', 'b', 'c'];
+
+array1.forEach(element => console.log(array1.indexOf(element)));
+
+// expected output: "a"
+// expected output: "b"
+// expected output: "c"
+
+
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+console.log(beasts.indexOf('bison'));
+// expected output: 1
+
+// start from index 2
+console.log(beasts.indexOf('bison', 2));
+// expected output: 4
+
+console.log(beasts.indexOf('giraffe'));
+// expected output: -1
+
+// Do not edit the code below.
+each(names, function(item, indice){
+  console.log('The item in the ' + indice + ' position is ' + item)
+});
+
+ */
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -135,11 +212,14 @@ each(names, function(item, indice){
 ////////// PROBLEM 7 //////////
 
 /*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
+  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches 
+  for the user with a matching id.
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
-// Code here
+var getUserById = function (users, id, callback){
+  return callback(users, id )
+}
 
 // Do not edit the code below.
 var users = [
